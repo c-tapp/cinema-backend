@@ -1,0 +1,59 @@
+/* Basic styling for the whole document */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black; /* Set background to black */
+    color: white; /* Set text color to white for contrast */
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Content styling */
+.content-container {
+    flex-grow: 1;
+    padding: 25px;
+}
+
+/* Footer styling */
+#footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Full bordered row */
+.row-bordered {
+    border: 1px solid white;
+    margin: 10px 0;
+}
+
+/* Bordered cell */
+.cell-bordered {
+    padding: 0;
+    border: 1px solid white;
+}
+
+/* Image cell */
+.cell-image {
+    padding: 0;
+}
+
+/* Bottom of row border */
+.row-bottom-border {
+    border-bottom: 1px solid #fff;
+}
+
+/* All images */
+.img-fluid {
+    width: 100%; /* Ensures the image fills the column */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes bottom space/margin */
+}
