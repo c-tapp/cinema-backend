@@ -32,4 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-**/src/main/java/com/cinemaDB/frontend/1.jpg
+/src/main/resources/static/1.jpg

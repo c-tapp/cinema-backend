@@ -4,6 +4,6 @@ import com.cinemaDB.backend.entity.SeasonalAnime;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface SeasonalAnimeRepo extends MongoRepository<SeasonalAnime, String> {
-    // Custom mongoDB queries
+    // Custom mongoDB queries - CRUD operations go here
 
 }
