@@ -18,7 +18,6 @@ public class SeasonalAnimeController {
     @GetMapping("/seasonal-anime")
     public String showSeasonalAnime(Model model) {
         List<SeasonalAnime> seasonalAnimeList = repo.findAll();
-        System.out.println(seasonalAnimeList); // Log the list to verify data
         model.addAttribute("seasonalAnimeList", seasonalAnimeList);
         return "seasonal_anime";
     }

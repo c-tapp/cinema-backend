@@ -17,11 +17,13 @@ public class SeasonalAnime {
     @Field
     private List<String> genres;
     @Field
-    private String startDate;
+    private String start_date;
     @Field
     private Integer year;
     @Field
     private Integer season;
+    @Field
+    private String image_url;
 
     public SeasonalAnime() {}
 
@@ -29,28 +31,64 @@ public class SeasonalAnime {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getStudio() {
         return studio;
     }
 
+    public void setStudio(String studio) {
+        this.studio = studio;
+    }
+
     public List<String> getGenres() {
         return genres;
     }
 
-    public String getStartDate() {
-        return startDate;
+    public void setGenres(List<String> genres) {
+        this.genres = genres;
+    }
+
+    public String getStart_date() {
+        return start_date;
+    }
+
+    public void setStart_date(String start_date) {
+        this.start_date = start_date;
     }
 
     public Integer getYear() {
         return year;
     }
 
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
     public Integer getSeason() {
         return season;
+    }
+
+    public void setSeason(Integer season) {
+        this.season = season;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 
     @Override
@@ -60,9 +98,10 @@ public class SeasonalAnime {
                 ", title='" + title + '\'' +
                 ", studio='" + studio + '\'' +
                 ", genres=" + genres +
-                ", startDate='" + startDate + '\'' +
+                ", start_date='" + start_date + '\'' +
                 ", year=" + year +
                 ", season=" + season +
+                ", image_url='" + image_url + '\'' +
                 '}';
     }
 }

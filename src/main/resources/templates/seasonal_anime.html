@@ -19,36 +19,40 @@
 <!-- CONTENT -->
 <div class="container content-container my-5">
     <div th:each="anime : ${seasonalAnimeList}" class="row mb-4 row-bordered">
+        <!-- Image Column -->
+        <div class="col-md-3 cell-image">
+            <img th:src="${anime.image_url}" alt="Cinema Image" class="img-fluid">
+        </div>
         <!-- Information Column -->
         <div class="col-md-6">
             <div class="row">
                 <div class="col-12">
-                    <h3 th:text="${anime.Title}">Title of the Anime</h3>
+                    <h3 th:text="${anime.title}">Title of the Anime</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p><strong>Genres:</strong> <span th:text="${#strings.arrayJoin(anime.Genres, ', ')}">Genres List</span></p>
+                    <p><strong>Genres:</strong> <span th:text="${#strings.arrayJoin(anime.genres, ', ')}">Genres List</span></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p><strong>Year:</strong> <span th:text="${anime.Year}">Release Year</span></p>
+                    <p><strong>Year:</strong> <span th:text="${anime.year}">Release Year</span></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p><strong>Season:</strong> <span th:text="${anime.Season}">Season</span></p>
+                    <p><strong>Season:</strong> <span th:text="${anime.season}">Season</span></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p><strong>Start Date:</strong> <span th:text="${anime.Start Date}">Start Date</span></p>
+                    <p><strong>Start Date:</strong> <span th:text="${anime.start_date}">Start Date</span></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p><strong>Studio:</strong> <span th:text="${anime.Studio}">Studio Name</span></p>
+                    <p><strong>Studio:</strong> <span th:text="${anime.studio}">Studio Name</span></p>
                 </div>
             </div>
         </div>
@@ -59,6 +63,7 @@
         </div>
     </div>
 </div>
+
 
 
 <!-- FOOTER -->
