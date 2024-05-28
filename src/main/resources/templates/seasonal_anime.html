@@ -24,7 +24,7 @@
             <img th:src="${anime.image_url}" alt="Cinema Image" class="img-fluid">
         </div>
         <!-- Information Column -->
-        <div class="col-md-6">
+        <div class="col-md-6 d-flex flex-column justify-content-center">
             <div class="row">
                 <div class="col-12">
                     <h3 th:text="${anime.title}">Title of the Anime</h3>
@@ -42,7 +42,15 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p><strong>Season:</strong> <span th:text="${anime.season}">Season</span></p>
+                    <p><strong>Season:</strong>
+                        <span th:switch="${anime.season}">
+                            <span th:case="1">Winter</span>
+                            <span th:case="2">Spring</span>
+                            <span th:case="3">Summer</span>
+                            <span th:case="4">Fall</span>
+                            <span th:case="*" th:text="${'Unknown'}"></span>
+                        </span>
+                    </p>
                 </div>
             </div>
             <div class="row">
@@ -57,19 +65,31 @@
             </div>
         </div>
         <!-- Fourth Column -->
-        <div class="col-md-3">
-            <!-- Add interactive elements like buttons if needed -->
-            <button class="btn btn-primary">More Info</button>
+        <!-- center center: "d-flex align-items-center justify-content-center" -->
+        <div class="col-md-3 d-flex flex-column justify-content-center">
+            <!-- Form for deleting the entry -->
+            <form th:action="@{/delete}" method="post" th:attr="data-title=${anime.title}" onsubmit="return confirmDeletion(this)">
+                <!-- Hidden input to store anime ID -->
+                <input type="hidden" name="animeId" th:value="${anime.id}">
+                <!-- Delete button -->
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
         </div>
     </div>
 </div>
-
-
 
 <!-- FOOTER -->
 <div id="footer" class="bg-dark text-light text-center py-3 fixed-bottom">
     <p>Cinema Database</p>
     <p>Visit my <a href="https://github.com/c-tapp" target="_blank">Github</a></p>
 </div>
+
+<!-- JavaScript Function -->
+<script>
+    function confirmDeletion(form) {
+        var title = form.getAttribute('data-title');
+        return confirm('Are you sure you want to delete ' + title + '?');
+    }
+</script>
 </body>
 </html>
